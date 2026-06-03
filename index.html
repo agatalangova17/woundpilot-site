@@ -570,13 +570,12 @@ body {
   </div>
 </section>
 
-
 <!-- WALKTHROUGH STORY -->
 <section class="section" id="walkthrough">
   <div class="section-inner">
     <div class="section-header reveal">
-      <div class="section-eyebrow">A Complete Assessment</div>
-      <h2>From login to treatment plan,<br>step by step.</h2>
+      <div class="section-eyebrow" data-i18n="wk_ey">A Complete Assessment</div>
+      <h2><span data-i18n="wk_t1">From login to treatment plan,</span><br><span data-i18n="wk_t2">step by step.</span></h2>
     </div>
     <div class="carousel reveal">
       <button class="carousel-btn prev" onclick="scrollCarousel(-1)" aria-label="Previous">‹</button>
@@ -585,50 +584,50 @@ body {
         <div class="carousel-slide">
           <img src="IMG_3605.jpeg" alt="Face ID login">
           <div class="story-step">01</div>
-          <div class="story-caption">Secure login</div>
-          <div class="story-sub">Face ID unlocks the app and protects patient data.</div>
+          <div class="story-caption" data-i18n="w1c">Secure login</div>
+          <div class="story-sub" data-i18n="w1s">Face ID unlocks the app and protects patient data.</div>
         </div>
 
         <div class="carousel-slide">
           <img src="IMG_3594.jpeg" alt="Dashboard">
           <div class="story-step">02</div>
-          <div class="story-caption">Dashboard</div>
-          <div class="story-sub">Quick Scan, or work from a saved patient record.</div>
+          <div class="story-caption" data-i18n="w2c">Dashboard</div>
+          <div class="story-sub" data-i18n="w2s">Quick Scan, or work from a saved patient record.</div>
         </div>
 
         <div class="carousel-slide">
           <img src="IMG_3577.jpeg" alt="Body location picker">
           <div class="story-step">03</div>
-          <div class="story-caption">Locate the wound</div>
-          <div class="story-sub">Location feeds into the clinical reasoning.</div>
+          <div class="story-caption" data-i18n="w3c">Locate the wound</div>
+          <div class="story-sub" data-i18n="w3s">Location feeds into the clinical reasoning.</div>
         </div>
 
         <div class="carousel-slide">
           <img src="IMG_3617.jpeg" alt="LiDAR measurement">
           <div class="story-step">04</div>
-          <div class="story-caption">Measure with LiDAR</div>
-          <div class="story-sub">Length, width, and area from real depth data.</div>
+          <div class="story-caption" data-i18n="w4c">Measure with LiDAR</div>
+          <div class="story-sub" data-i18n="w4s">Length, width, and area from real depth data.</div>
         </div>
 
         <div class="carousel-slide">
           <img src="IMG_3610.jpeg" alt="Clinical questionnaire">
           <div class="story-step">05</div>
-          <div class="story-caption">Clinical questionnaire</div>
-          <div class="story-sub">Captures the variables a clinician would record.</div>
+          <div class="story-caption" data-i18n="w5c">Clinical questionnaire</div>
+          <div class="story-sub" data-i18n="w5s">Captures the variables a clinician would record.</div>
         </div>
 
         <div class="carousel-slide">
           <img src="IMG_3585.jpeg" alt="Assessment report">
           <div class="story-step">06</div>
-          <div class="story-caption">Assessment report</div>
-          <div class="story-sub">Suggested etiology with transparent reasoning.</div>
+          <div class="story-caption" data-i18n="w6c">Assessment report</div>
+          <div class="story-sub" data-i18n="w6s">Suggested etiology with transparent reasoning.</div>
         </div>
 
         <div class="carousel-slide">
           <img src="IMG_3592.jpeg" alt="Dressing recommendation">
           <div class="story-step">07</div>
-          <div class="story-caption">Dressing recommendation</div>
-          <div class="story-sub">Tailored to the wound, with allergy checks.</div>
+          <div class="story-caption" data-i18n="w7c">Dressing recommendation</div>
+          <div class="story-sub" data-i18n="w7s">Tailored to the wound, with allergy checks.</div>
         </div>
 
       </div>
@@ -829,7 +828,24 @@ const T={sk:{
   "sc3t": "V súlade s GDPR",
   "sc3d": "Úplné vymazanie účtu, žiadne zbytočné zhromažďovanie údajov a spracovanie na zariadení.",
   "ft_copy": "© 2026 WoundPilot. Všetky práva vyhradené.",
-  "ft_disc": "WoundPilot je nástroj na podporu klinického rozhodovania (proof of concept) určený pre kvalifikovaných zdravotníckych pracovníkov. Nenahradzuje odborný medicínsky úsudok. Všetky diagnostické návrhy musia byť overené licencovaným odborníkom pred klinickým použitím."
+  "ft_disc": "WoundPilot je nástroj na podporu klinického rozhodovania (proof of concept) určený pre kvalifikovaných zdravotníckych pracovníkov. Nenahradzuje odborný medicínsky úsudok. Všetky diagnostické návrhy musia byť overené licencovaným odborníkom pred klinickým použitím.",
+  "wk_ey": "Kompletné hodnotenie",
+  "wk_t1": "Od prihlásenia po plán liečby,",
+  "wk_t2": "krok za krokom.",
+  "w1c": "Bezpečné prihlásenie",
+  "w1s": "Face ID odomkne aplikáciu a chráni údaje pacienta.",
+  "w2c": "Prehľad",
+  "w2s": "Rýchly sken alebo práca z uloženého záznamu pacienta.",
+  "w3c": "Lokalizácia rany",
+  "w3s": "Poloha vstupuje do klinického vyhodnotenia.",
+  "w4c": "Meranie pomocou LiDAR",
+  "w4s": "Dĺžka, šírka a plocha z reálnych hĺbkových dát.",
+  "w5c": "Klinický dotazník",
+  "w5s": "Zachytí premenné, ktoré by klinik zaznamenal.",
+  "w6c": "Hodnotiaca správa",
+  "w6s": "Navrhnutá etiológia s transparentným odôvodnením.",
+  "w7c": "Odporúčanie obväzu",
+  "w7s": "Prispôsobené rane, s kontrolou alergií."
 }};
 const enDefaults={};
 document.querySelectorAll('[data-i18n]').forEach(function(el){enDefaults[el.getAttribute('data-i18n')]=el.textContent;});
