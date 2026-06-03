@@ -196,6 +196,28 @@ body {
 .stat-number { font-size: 32px; font-weight: 700; letter-spacing: -1px; background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
 .stat-label { font-size: 13px; font-weight: 500; color: var(--text-tertiary); }
 
+ /* ===== CAROUSEL ===== */
+.carousel { position: relative; max-width: 900px; margin: 0 auto; }
+.carousel-track {
+  display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; padding: 8px 4px 20px; -webkit-overflow-scrolling: touch;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track { scrollbar-width: none; }
+.carousel-slide { flex: 0 0 auto; width: 280px; scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; }
+.carousel-slide img { width: 100%; height: auto; border-radius: 22px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-subtle); background: #000; }
+.carousel-btn {
+  position: absolute; top: 40%; transform: translateY(-50%); z-index: 5;
+  width: 48px; height: 48px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--surface-solid); box-shadow: var(--shadow-lg); color: var(--primary-blue);
+  display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700;
+  transition: transform 0.2s;
+}
+.carousel-btn:hover { transform: translateY(-50%) scale(1.08); }
+.carousel-btn.prev { left: -8px; }
+.carousel-btn.next { right: -8px; }
+@media (max-width: 600px) { .carousel-btn { display: none; } } 
+
 /* ===== SECTION SHARED ===== */
 .section { padding: 0 32px; margin-bottom: var(--section-gap); }
 
@@ -556,71 +578,61 @@ body {
       <div class="section-eyebrow">A Complete Assessment</div>
       <h2>From login to treatment plan,<br>step by step.</h2>
     </div>
-    <div class="story-grid reveal">
+    <div class="carousel reveal">
+      <button class="carousel-btn prev" onclick="scrollCarousel(-1)" aria-label="Previous">‹</button>
+      <div class="carousel-track" id="carousel-track">
 
-      <div class="story-card">
-        <img src="IMG_3605.jpeg" alt="Face ID login">
-        <div class="story-step">01</div>
-        <div class="story-caption">Secure login</div>
-        <div class="story-sub">Face ID unlocks the app and protects patient data.</div>
+        <div class="carousel-slide">
+          <img src="IMG_3605.jpeg" alt="Face ID login">
+          <div class="story-step">01</div>
+          <div class="story-caption">Secure login</div>
+          <div class="story-sub">Face ID unlocks the app and protects patient data.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="IMG_3594.jpeg" alt="Dashboard">
+          <div class="story-step">02</div>
+          <div class="story-caption">Dashboard</div>
+          <div class="story-sub">Quick Scan, or work from a saved patient record.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="IMG_3577.jpeg" alt="Body location picker">
+          <div class="story-step">03</div>
+          <div class="story-caption">Locate the wound</div>
+          <div class="story-sub">Location feeds into the clinical reasoning.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="IMG_3617.jpeg" alt="LiDAR measurement">
+          <div class="story-step">04</div>
+          <div class="story-caption">Measure with LiDAR</div>
+          <div class="story-sub">Length, width, and area from real depth data.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="IMG_3610.jpeg" alt="Clinical questionnaire">
+          <div class="story-step">05</div>
+          <div class="story-caption">Clinical questionnaire</div>
+          <div class="story-sub">Captures the variables a clinician would record.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="IMG_3585.jpeg" alt="Assessment report">
+          <div class="story-step">06</div>
+          <div class="story-caption">Assessment report</div>
+          <div class="story-sub">Suggested etiology with transparent reasoning.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="IMG_3592.jpeg" alt="Dressing recommendation">
+          <div class="story-step">07</div>
+          <div class="story-caption">Dressing recommendation</div>
+          <div class="story-sub">Tailored to the wound, with allergy checks.</div>
+        </div>
+
       </div>
-
-      <div class="story-card">
-        <img src="IMG_3594.jpeg" alt="Dashboard">
-        <div class="story-step">02</div>
-        <div class="story-caption">Dashboard</div>
-        <div class="story-sub">Quick Scan, or work from a saved patient record.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="IMG_3577.jpeg" alt="Body location picker">
-        <div class="story-step">03</div>
-        <div class="story-caption">Locate the wound</div>
-        <div class="story-sub">Location feeds into the clinical reasoning.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="screen-4.png" alt="LiDAR measurement">
-        <div class="story-step">04</div>
-        <div class="story-caption">Measure with LiDAR</div>
-        <div class="story-sub">Length, width, and area from real depth data.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="screen-5.png" alt="Clinical questionnaire">
-        <div class="story-step">05</div>
-        <div class="story-caption">Clinical questionnaire</div>
-        <div class="story-sub">Captures the variables a clinician would record.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="screen-6.png" alt="Assessment report">
-        <div class="story-step">06</div>
-        <div class="story-caption">Assessment report</div>
-        <div class="story-sub">Suggested etiology with transparent reasoning.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="screen-7.png" alt="Dressing recommendation">
-        <div class="story-step">07</div>
-        <div class="story-caption">Dressing recommendation</div>
-        <div class="story-sub">Tailored to the wound, with allergy checks.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="screen-8.png" alt="PUSH healing score">
-        <div class="story-step">08</div>
-        <div class="story-caption">Track healing</div>
-        <div class="story-sub">PUSH scoring shows the trajectory across visits.</div>
-      </div>
-
-      <div class="story-card">
-        <img src="screen-9.png" alt="Slovak language interface">
-        <div class="story-step">09</div>
-        <div class="story-caption">English and Slovak</div>
-        <div class="story-sub">The whole interface switches language.</div>
-      </div>
-
+      <button class="carousel-btn next" onclick="scrollCarousel(1)" aria-label="Next">›</button>
     </div>
   </div>
 </section>
@@ -831,6 +843,12 @@ function setLang(lang){
   });
   document.title=lang==='sk'?'WoundPilot — Inteligentné hodnotenie starostlivosti o rany':'WoundPilot — Intelligent Wound Care Assessment';
 }
+function scrollCarousel(dir) {
+  var track = document.getElementById('carousel-track');
+  var slide = track.querySelector('.carousel-slide');
+  var step = slide ? slide.offsetWidth + 24 : 300;
+  track.scrollBy({ left: dir * step, behavior: 'smooth' });
+}  
 </script>
 </body>
 </html>
